@@ -1,0 +1,33 @@
+class Solution {
+    public int[] minOperations(String boxes) {
+        int n = boxes.length();
+        int[] dis = new int[n];
+
+        int prefixCount = 0;
+        int prefixSum = 0;
+        for(int i=0;i<n;i++){
+
+            dis[i] = prefixCount*i - prefixSum;   // Calculate cost to bring left balls to current 'i'
+
+            if(boxes.charAt(i) == '1'){          // If current box has a ball, update counters for future boxes
+                ++prefixCount;
+                prefixSum += i;
+            }
+        }
+
+        int suffixCount = 0;
+        int suffixSum = 0;
+        for(int i=n-1;i>=0;--i){
+
+            dis[i] += suffixSum - suffixCount*i;  // Add cost to bring right balls to current 'i'
+
+            if(boxes.charAt(i) == '1'){           // If current box has a ball, update counters
+                ++suffixCount;
+                suffixSum += i;
+            }
+        }
+
+        return dis;
+
+    }
+}
