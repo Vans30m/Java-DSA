@@ -1,0 +1,15 @@
+class Solution {
+    public int reverseBits(int n) {
+        String str = Integer.toBinaryString(n);
+        int len = str.length();
+        for(int i=0;i<32-len;i++){  // Since integers are 32 bits, but toBinaryString() omits leading zeros
+            str = "0"+str;          // adds leading zeros
+        }
+
+        String st = "";
+        for(int j=str.length()-1;j>=0;j--){
+            st += str.charAt(j);
+        }
+        return Integer.parseInt(st,2);
+    }
+}
