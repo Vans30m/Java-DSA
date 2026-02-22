@@ -18,8 +18,8 @@ Suggested file format:
 `<problemNumber> - <ProblemName>_/<Answer>`
 
 Examples:
-- `1- TwoSum/Question`
-- `1- TwoSum/Answer`
+- `1-TwoSum/Question`
+- `1-TwoSum/Answer`
 
 
 ## Progress Tracking
