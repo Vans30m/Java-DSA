@@ -29,10 +29,6 @@ I may optionally add a tracker (by topic / difficulty) as I solve more problems.
 If you want to run solutions locally:
 1. Install Java (JDK 17+ recommended).
 2. Compile and run:
-   ```bash
-   javac FileName.java
-   java FileName
-   ```
 
 > Note: Many LeetCode solutions are written as a `class Solution` and may need a small `main` wrapper to run locally.
 
