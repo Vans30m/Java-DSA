@@ -1,0 +1,21 @@
+class Solution {
+    public int balancedStringSplit(String s) {
+        int balance = 0;
+        int count = 0;
+        for(char ch : s.toCharArray()){
+            if(ch == 'L'){
+                balance++;
+            }
+            else{
+                balance--;
+            }
+
+            // If balance reaches 0, it means we have encountered an equal number of 'L's and 'R's since the last split.
+
+            if(balance == 0){
+                count++;
+            }
+        }
+        return count;
+    }
+}
