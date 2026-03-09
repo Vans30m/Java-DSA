@@ -1,0 +1,17 @@
+class Solution {
+    public int[] dailyTemperatures(int[] temperatures) {
+        int n=temperatures.length;
+        Stack<Integer> stack=new Stack<>();
+        int[] res=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            while(!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()])    // stack is not empty and temp. is greater than temp. of day currently at top of stack
+            {
+                int index=stack.pop();      // if both are true, we remove that index
+                res[index]=i-index;         // calculation of how many days we waited
+            }
+        stack.push(i);
+        }
+        return res; 
+    }
+}
