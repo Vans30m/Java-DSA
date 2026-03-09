@@ -10,7 +10,7 @@ class Solution {
                 int index=stack.pop();      // if both are true, we remove that index
                 res[index]=i-index;         // calculation of how many days we waited
             }
-        stack.push(i);
+        stack.push(i);    // current day to waiting day
         }
         return res; 
     }
