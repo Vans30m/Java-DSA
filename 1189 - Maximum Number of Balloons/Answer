@@ -1,0 +1,18 @@
+class Solution {
+    public int maxNumberOfBalloons(String text) {
+        int[] count = new int[26];
+
+        for(char ch : text.toCharArray()){
+            count[ch - 'a']++;  // ASCII value
+            // ch - 97
+        }
+
+        int b = count['b' - 'a'];
+        int a = count['a' - 'a'];
+        int l = count['l' - 'a'] / 2;       // divide by 2 as 'l' and 'o' comes twice
+        int o = count['o' - 'a'] / 2;
+        int n = count['n' - 'a'];
+
+        return Math.min(b, Math.min(a, Math.min(l, Math.min(o, n))));   // to find smallest letter among "ballon" and return it
+    }
+}
