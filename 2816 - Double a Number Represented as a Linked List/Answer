@@ -10,13 +10,16 @@
  */
 class Solution {
     public ListNode doubleIt(ListNode head) {
+
+        // taking greater than 4 as multiplying with 5 or greater than 5 will result in carry
+
         if(head.val > 4){       // if a node is greater than 4 then, insert '0' at beginning
             head = new ListNode(0,head);
         }
 
         ListNode temp = head;
         while(temp != null){
-            temp.val = (temp.val * 2) % 10; // multiply by 2 and do modulo for carry
+            temp.val = (temp.val * 2) % 10;            // multiply by 2 and do modulo for carry
 
             if(temp.next != null && temp.next.val > 4){    // if next node is greater than 4 then increment current node's value
                 temp.val++;
