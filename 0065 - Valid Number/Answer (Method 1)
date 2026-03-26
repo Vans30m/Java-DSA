@@ -1,0 +1,13 @@
+class Solution {
+    public boolean isNumber(String s) {
+        return s.trim().matches("^[\\+\\-]?((\\d+\\.\\d*)|(\\.\\d+)|(\\d+))([eE][\\+\\-]?\\d+)?$");
+
+    // ^ => string starts
+    // [\\+\\-]? => allows '+' or '-' at start and '?' means '0' or '1'
+    // (\\d+\\.\\d*) => at least one digit followed by a dot and then zero or more digits
+    // (\\.\\d+) => a dot followed by at least one digit
+    // (\\d+) => just digits
+    // ([eE][\\+\\-]?\\d+)? => allows 'e' or 'E', followed by signs and at least one digit
+    // $ => end of string
+    }
+}
