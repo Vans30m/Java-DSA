@@ -14,8 +14,8 @@ All DSA questions solved by me on different platforms — primarily **LeetCode**
 ## Naming Convention
 Suggested file format:
 
-- `<problemNumber> - <ProblemName>_/<Question>`
-- `<problemNumber> - <ProblemName>_/<Answer>`
+- `<problemNumber> - <ProblemName>/<Question>`
+- `<problemNumber> - <ProblemName>/<Answer>`
 
 Examples:
 - `1-TwoSum/Question`
