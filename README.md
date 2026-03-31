@@ -1,4 +1,4 @@
-# Java DSA (LeetCode Solutions)
+# Java DSA
 
 All DSA questions solved by me on different platforms — primarily **LeetCode** — using **Java**.
 
@@ -12,7 +12,7 @@ All DSA questions solved by me on different platforms — primarily **LeetCode**
 - **Focus Areas:** Data Structures & Algorithms (DSA)
 
 ## Naming Convention
-Suggested file format:
+File format:
 
 - `<problemNumber> - <ProblemName>/<Question>`
 - `<problemNumber> - <ProblemName>/<Answer>`
