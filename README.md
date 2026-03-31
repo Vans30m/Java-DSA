@@ -17,7 +17,7 @@ File format:
 - `<problemNumber> - <ProblemName>/<Question>`
 - `<problemNumber> - <ProblemName>/<Answer>`
 
-Examples:
+Example:
 - `1-TwoSum/Question`
 - `1-TwoSum/Answer`
 
@@ -25,12 +25,11 @@ Examples:
 ## Progress Tracking
 I may optionally add a tracker (by topic / difficulty) as I solve more problems.
 
-## How to Run (Optional)
+## How to Run
 If you want to run solutions locally:
 1. Install Java (JDK 17+ recommended).
 2. Compile and run:
 
-> Note: Many LeetCode solutions are written as a `class Solution` and may need a small `main` wrapper to run locally.
 
 ## Disclaimer
 These are my own solutions for learning and revision. There can be multiple valid approaches to the same problem.
