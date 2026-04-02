@@ -1,0 +1,34 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        // Method - 2
+        int zero = 0;   // low
+        int one = 0;    // mid
+        int two = 0;    // high
+        for(int x : nums){
+            if(x == 0){     // if number is zero, increment by one
+                zero++;
+            }
+            else if(x == 1){    // if number is one, increment by one
+                one++;
+            }
+            else{       // if number is zero, increment by one
+                two++;
+            }
+        }
+
+        for(int n=0;n<nums.length;n++){
+        if(zero > 0){       // put zero at index(n) and decrease the count
+            nums[n] = 0;
+            zero--;
+        }
+        else if(one > 0){   // put one at index(n) and decrease the count
+            nums[n] = 1;
+            one--;
+        }
+        else{           // put zero at index(n) and decrease the count
+            nums[n] = 2;
+            two--;
+        }
+        }
+  }
+}
