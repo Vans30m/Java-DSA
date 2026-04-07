@@ -1,0 +1,27 @@
+class Solution {
+    public int longestValidParentheses(String s) {
+        int len = 0;
+        Stack<Integer> st = new Stack<>();
+        
+        st.push(-1);    // stack is not empty and serves as a base index
+        
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            
+            if (ch == '(') {    // Store index of '(', it may be matched with a future ')'
+                st.push(i); 
+            } 
+            else {
+                st.pop();
+                
+                if (st.isEmpty()) { // If stack becomes empty => no matching '(', this ')' is invalid, so push its index as the new base
+                    st.push(i);
+                }
+                else {
+                    len = Math.max(len, i - st.peek()); // If Valid substring found, Length = current index - last unmatched index
+                }
+            }
+        }
+        return len;
+    }
+}
