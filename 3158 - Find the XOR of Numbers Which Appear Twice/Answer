@@ -1,0 +1,13 @@
+class Solution {
+    public int duplicateNumbersXOR(int[] nums) {
+        int[] cons = new int[51];
+        int res = 0;
+        for(int num : nums){
+            cons[num]++;
+            if(cons[num] == 2){ // to ensure we perform XOR operation when a duplicate is found
+                res ^= num;
+            }
+        }
+        return res;
+    }
+}
