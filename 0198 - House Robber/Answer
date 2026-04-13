@@ -1,0 +1,13 @@
+class Solution {
+    public int rob(int[] nums) {
+        int rob = 0;
+        int noRob = 0;
+        for(int i=0;i<nums.length;i++){
+            int newRob = noRob + nums[i];   // can not rob two adjacent houses
+            int newNoRob = Math.max(noRob,rob); // decide not to rob curr house, you are free to take previous house regardless of that you robbed it or, not 
+            rob = newRob;   // update rob
+            noRob = newNoRob;   // update noRob
+        }
+        return Math.max(rob,noRob);
+    }
+}
