@@ -1,0 +1,27 @@
+class Solution {
+    public int maxArea(int[] height) {
+
+        int n = height.length;
+        int maxArea = 0;
+
+        int start = 0;
+        int end = n-1;
+
+        while(start < end){
+            int width = end - start;
+
+            int currheight = Math.min(height[start],height[end]);
+
+            int currArea = currheight * width;  // rectangle area formula used
+            maxArea = Math.max(maxArea,currArea);
+
+            if(height[start] < height[end]){
+                start++;
+            }
+            else{
+                end--;
+            }
+        }
+        return maxArea;
+    }
+}
