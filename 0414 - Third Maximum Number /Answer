@@ -1,0 +1,11 @@
+class Solution {
+    public int thirdMax(int[] nums) {
+        int count = 0;
+        Arrays.sort(nums);
+        for(int i = nums.length - 1; i > 0; i--){
+            if(nums[i] != nums[i - 1]) count++; // checks if current number is different from the number before it
+            if(count == 2) return nums[i - 1];  // if count reaches two you have passed first and second maximum therfore nums[i-1] be the third distinct max number
+        }
+        return nums[nums.length - 1];   // if loop finsihes without third max then return the last element of the loop[]
+    }
+}
