@@ -1,0 +1,34 @@
+// Method - 2
+class Solution {
+    public String reverseVowels(String s) {
+        // 1. Create a Set for fast vowel lookups
+        Set<Character> vowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
+        
+        char[] word = s.toCharArray();
+        int start = 0;
+        int end = s.length() - 1;
+
+        while (start < end) {
+            // 2. Move start pointer until it hits a vowel
+            while (start < end && !vowels.contains(word[start])) {
+                start++;
+            }
+            
+            // 3. Move end pointer until it hits a vowel
+            while (start < end && !vowels.contains(word[end])) {
+                end--;
+            }
+
+            // 4. Swap the vowels found
+            char temp = word[start];
+            word[start] = word[end];
+            word[end] = temp;
+
+            // 5. Move pointers inward to continue
+            start++;
+            end--;
+        }
+        
+        return new String(word);
+    }
+}
