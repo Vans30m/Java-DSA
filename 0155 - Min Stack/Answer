@@ -1,0 +1,35 @@
+class MinStack {
+    int min = Integer.MAX_VALUE;
+    Stack<Integer> st = new Stack<>();    
+    
+    void push(int x) {
+        if(x <= min){
+            st.push(min);   // if x is our new min then min is pushed back to stack
+            min = x;    // and min is updated to x
+        }
+        st.push(x); // finally the min number is pushed on to the stack
+    }
+    
+    void pop() {
+        if(st.pop() == min){    // removes and checks if the element removed is min
+            min = st.pop(); // we again pop as we backed the min value we have pushed earlier
+        }
+    }
+    
+    int top() {
+        return st.peek();
+    }
+    
+    int getMin() {
+        return min;
+    }
+}
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(val);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
