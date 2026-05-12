@@ -1,0 +1,16 @@
+class Solution {
+    public int[] separateDigits(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+        for(int i : nums){
+            String str = String.valueOf(i); // Integer to string
+            for(char ch : str.toCharArray()){   // string to an array of integers
+                list.add(ch - '0'); // ASCII value to real integer
+            }
+        }
+        int[] res = new int[list.size()];
+        for(int j=0;j<list.size();j++){
+            res[j] = list.get(j);
+        }
+        return res;
+    }
+}
